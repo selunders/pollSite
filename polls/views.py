@@ -1,3 +1,4 @@
+# from random import choices
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -18,14 +19,13 @@ class IndexView(generic.ListView):
         those set to be published in the future.
         """
         return Question.objects.filter(
-            pub_date__lte=timezone.now()
-        ).order_by('-pub_date')[:5]
+            pub_date__lte=timezone.now(), choice__isnull=False).distinct().order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
-    
+
     def get_queryset(self):
         """
         Excludes any questions that aren't published yet
