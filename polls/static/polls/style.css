@@ -1,0 +1,22 @@
+body {
+   font-size: 18px;
+   font-family: 'hack', sans-serif;
+   width: 80%;
+   margin: 0 auto;
+}
+
+li a {
+   color: green;
+}
+
+fieldset {
+   margin-bottom: 10px;
+}
+
+.btn {
+   padding: 10px 20px;
+   border: 1px solid #008844;
+   border-radius: 10px;
+   background-color: #00AA88;
+   color: white;
+}
