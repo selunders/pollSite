@@ -43,6 +43,16 @@ class ResultsView(generic.DetailView):
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
 
+class CreateView(generic.CreateView):
+    model = Question
+    fields = ['question_text']
+    template_name = 'polls/create.html'
+
+# def create(request):
+	# question = Question.objects.create(question_text = request.question_text, pub_date = request.pub_date, )
+	# question.choice_set.create(choice_text = 'Choice 1', votes=0)
+	# return HttpResponseRedirect(
+            # reverse('polls:detail', args=(question.id, )))
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)

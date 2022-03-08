@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	{% load static %}
+        {% load static %}
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <title>Poll Site | Q{{ question.id }}</title>
         <meta name="description" content=""/>
         <meta name="keywords" content="polls, poll site"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"/>
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'polls/style.css' %}"/>
     </head>
-    <body>
+    <body class="poll_details">
         {% comment %} <h1>{{ question.question_text }}</h1> {% endcomment %}
         {% comment %} <ul> {% endcomment %}
         {% comment %} {% for choice in question.choice_set.all %}<li>{{ choice.choice_text }}</li>{% endfor %} {% endcomment %}
@@ -32,10 +34,11 @@
                            id="choice{{ forloop.counter }}"
                            value="{{ choice.id }}"/>
                     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
-                    <br/>
+                    <br />
                 {% endfor %}
             </fieldset>
             <button class="btn">Submit</button>
+            <a class="btn" href="{% url 'polls:index' %}">Back</a>
         </form>
         {% comment %} <script src="" async defer></script> {% endcomment %}
     </body>

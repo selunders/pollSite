@@ -10,13 +10,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"/>
     </head>
-    <body>
+    <body class="results_view">
         <h1>{{ question.question_text }}</h1>
         <ul>
             {% for choice in question.choice_set.all %}
             <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
             {% endfor %}
         </ul>
-        <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+        <a class="btn" href="{% url 'polls:detail' question.id %}">Vote Again</a>
+        <a class="btn" href="{% url 'polls:index' %}">Home</a>
     </body>
 </html>

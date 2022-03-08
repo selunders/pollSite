@@ -23,6 +23,9 @@
                         <a class="btn btn-listing" href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
                     </div>
                 {% endfor %}
+                <div class="questionListing">
+                    <a class="btn btn-listing" href="{% url 'polls:create' %}">+</a>
+                </div>
             </div>
         {% else %}
             <p>

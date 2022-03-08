@@ -43,7 +43,8 @@ fieldset {
    margin-bottom: 10px;
 }
 
-a.btn {
+a.btn,
+button.btn {
    padding: 10px 20px;
    border: 1px solid #00AA88;
    border-radius: 100px;
@@ -52,6 +53,7 @@ a.btn {
    text-align: center;
    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.1);
    transition: all 0.2s;
+   margin: 10px;
 }
 
 .btn:active,
@@ -73,6 +75,11 @@ a.btn {
    /* align-items: center; */
    align-content: stretch;
    margin: 0 auto;
+}
+
+.questionListing:last-of-type {
+   font-size: 5em;
+   line-height: 1;
 }
 
 .questionListing {
@@ -101,3 +108,25 @@ a.btn {
    /* margin: 10px 5px; */
    /* max-width: 150px; */
 }
+
+
+/* -------------------------------- */
+/*           Details View           */
+/* -------------------------------- */
+fieldset {
+   padding: 30px;
+   border: 2px solid rgb(0, 158, 132);
+}
+
+input[type="radio"] {
+   height: 2em;
+}
+
+/* -------------------------------- */
+/*           Results View           */
+/* -------------------------------- */
+
+.results_view ul {
+   padding: 30px;
+}
+
